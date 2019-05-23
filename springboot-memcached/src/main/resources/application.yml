@@ -1,0 +1,7 @@
+memcached:
+  #服务节点
+  servers: cache:11211
+  #连接池数量
+  poolSize: 5
+  #是否启用url  encode机制
+  sanitizeKeys: false
