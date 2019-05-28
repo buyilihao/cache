@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="memcached-api" />
+        <module name="redis-api" />
         <module name="springboot-memcached" />
         <module name="springboot-redis" />
       </profile>

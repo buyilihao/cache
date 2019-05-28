@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/memcached-api/pom.xml" />
+        <option value="$PROJECT_DIR$/redisapi/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-api/pom.xml" />
       </list>
     </option>
   </component>
