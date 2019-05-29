@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzbank.redis.dao.UserDao">
+    <!-- User的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_User_Map" type="com.hzbank.redis.entity.User">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+    </resultMap>
+
+    <cache type="com.hzbank.redis.cache.MybatisRedisCache"/>
+
+    <!-- 数据库中表名为:t_user的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="t_user_Column">
+        id,name,age
+    </sql>
+
+    <!-- 获得类名为:User对应数据库中表的数据集合 -->
+    <select id="selectUser" resultMap="result_User_Map">
+        select 
+        <include refid="t_user_Column" /> 
+        from t_user
+    </select> 
+
+    <!-- 通过User的id获得对应数据库中表的数据对象-->
+    <select id="selectUserById" parameterType="java.lang.Integer" resultMap="result_User_Map">
+        select 
+            <include refid="t_user_Column" /> 
+        from t_user
+        where t_user.id = #{id}
+    </select> 
+
+
+</mapper>
