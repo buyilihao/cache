@@ -13,9 +13,7 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-//    @Select(value = "select id,name,age from t_user where id=#{id}")
     User selectUserById(Integer id);
 
-//    @Select(value = "select id,name,age from t_user")
     List<User> selectUser();
 }
